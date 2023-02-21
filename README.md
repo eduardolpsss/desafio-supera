@@ -1,5 +1,12 @@
 # desafio-supera
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/64506852/220224137-219d5342-44ba-42d6-b8ef-726607519d93.jpeg" width="20%">
+  <img src="https://user-images.githubusercontent.com/64506852/220224147-b78a3887-ca12-47b5-9bd3-a861d1fb6e75.jpeg" width="20%">
+</div>
+
+<br>
+
 Link para o projeto: `https://desafio-supera.netlify.app/`
 
 Desafio feito seguindo os requisitos do documento `https://distinct-icon-9cd.notion.site/Desafios-Supera-Processo-Seletivo-d51bf617bc034548bdf64cf52d6897fc`
