@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 // Tipagem dos dados dos jogos vindos da API
 export type StoreGameType = {
     id: number;

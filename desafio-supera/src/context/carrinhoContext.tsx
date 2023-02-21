@@ -1,7 +1,8 @@
+import { createContext, useContext, ReactNode, useState  } from "react";
+
 // Importando os types necessários
 import { CarrinhoProviderProps, CarrinhoJogo, CarrinhoContextData } from "../types/types";
 
-import { createContext, useContext, ReactNode, useState  } from "react";
 // Importando componente carrinho de compras modal
 import { ModalCarrinho } from "../components/ModalCarrinho";
 
