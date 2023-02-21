@@ -1,38 +1,9 @@
+// Importando os types necessários
+import { CarrinhoProviderProps, CarrinhoJogo, CarrinhoContextData } from "../types/types";
+
 import { createContext, useContext, ReactNode, useState  } from "react";
 // Importando componente carrinho de compras modal
 import { ModalCarrinho } from "../components/ModalCarrinho";
-
-// Tipagem do provider do carrinho de compras (children é o que vai ser renderizado dentro do provider)
-type CarrinhoProviderProps = {
-    // Tipo que aceita qualquer coisa que o React aceite como filho
-    children: ReactNode;
-}
-
-// Tipagem do jogo no carrinho de compras (id do jogo e quantidade)
-type CarrinhoJogo = {
-    id: number;
-    quantidade: number;
-}
-
-// Tipagem de funções que serão passadas para o contexto do carrinho de compras
-type CarrinhoContextData = {
-    /*
-        Funções para pegar a quantidade de um jogo no carrinho de compras, adicionar a quantidade de um jogo no carrinho de compras, remover a quantidade de um jogo no carrinho de compras e remover um jogo do carrinho de compras    
-    */
-    getGamesQuantity: (id: number) => number;
-    addGamesQuantity: (id: number) => void;
-    removeGamesQuantity: (id: number) => void;
-    removerDoCarrinho: (id: number) => void;
-
-    /*
-        Funções referentes a modal do carrinho (abrir e fechar)
-    */
-    abrirModalCarrinho: () => void;
-    fecharModalCarrinho: () => void;
-    quantidadeTotalNoCarrinho: number;
-    carrinhoJogos: CarrinhoJogo[];
-}
-
 
 // Criando contexto do carrinho de compras
 const CarrinhoContext = createContext({} as CarrinhoContextData);
