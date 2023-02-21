@@ -14,7 +14,7 @@ export function StoreGame({ id, name, price, score, image }: StoreGameType) {
     const quantidadeSelecionada = getGamesQuantity(id);
 
     return (
-        <Card className='h-100'>
+        <Card className='h-100' bg="dark">
             {/* Imagem do game */}
             <Card.Img variant="top" src={image} height="100%" style={{ objectFit: 'cover' }}/>
             {/* Body com nome, preço do game formatado pela função formataVM (BRL) - utils/formataVM.ts */}
@@ -29,17 +29,17 @@ export function StoreGame({ id, name, price, score, image }: StoreGameType) {
                     {
                         quantidadeSelecionada === 0 ?
                             // Botão de adicionar ao carrinho com a função addGamesQuantity (context/carrinhoContext.tsx)
-                            <Button className='w-100' onClick={() => addGamesQuantity(id)}>Adicionar ao carrinho</Button>
+                            <Button className='w-100' variant='secondary' onClick={() => addGamesQuantity(id)}>Adicionar ao carrinho</Button>
                         :
                         <div className='d-flex align-items-center flex-column' style={{ gap: '0.5rem' }}>
                             <div className='d-flex align-items-center justify-content-center' style={{ gap: '0.5rem' }}>
                                 {/* Botão de remover um jogo do carrinho de compras com a função removeGamesQuantity (context/carrinhoContext.tsx) */}
-                                <Button variant='outline-secondary' size='sm' onClick={() => removeGamesQuantity(id)}>-</Button>
+                                <Button variant='outline-secondary'size='sm' onClick={() => removeGamesQuantity(id)}>-</Button>
                                 <span className='fs-3'>{quantidadeSelecionada}</span> no carrinho
-                                <Button variant='outline-secondary' size='sm' onClick={() => addGamesQuantity(id)}>+</Button>
+                                <Button variant='outline-secondary'size='sm' onClick={() => addGamesQuantity(id)}>+</Button>
                             </div>
                             {/* Botão de remover um jogo do carrinho de compras com a função removerDoCarrinho (context/carrinhoContext.tsx) */}
-                            <Button variant='danger' size='sm' onClick={() => removerDoCarrinho(id)}>Remover todos do carrinho</Button>
+                            <Button variant='danger'size='sm' onClick={() => removerDoCarrinho(id)}>Remover todos do carrinho</Button>
                         </div>
                     }
                 </div>

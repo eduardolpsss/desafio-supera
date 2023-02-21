@@ -8,8 +8,6 @@ import { StoreGame } from "../components/StoreGame"
 export function Store() {
     return (
         <>
-            <h1>Store</h1>
-
             <Row md={2} xs={1} lg={3} className="g-3">
                 {storeGames.map((game) => (
                     <Col key={game.id}>
