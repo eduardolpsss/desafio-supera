@@ -1,3 +1,6 @@
+// Importando os types necessários
+import { ModalCarrinhoProps } from "../types/types";
+
 import { Offcanvas, Stack } from 'react-bootstrap';
 // Importando contexto do carrinho de compras
 import { useCarrinho } from "../context/carrinhoContext"
@@ -7,9 +10,6 @@ import { formataVM } from '../utils/formataVM';
 // Importando JSON de produtos
 import storeGames from "../data/products.json"
 
-type ModalCarrinhoProps = {
-    modalCarrinhoAberto: boolean;
-}
 
 export function ModalCarrinho( { modalCarrinhoAberto }: ModalCarrinhoProps ) {
 

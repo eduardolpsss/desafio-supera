@@ -1,15 +1,12 @@
+// Importando os types necessários
+import { JogoNoCarrinhoProps } from "../types/types";
+
 import { useCarrinho } from "../context/carrinhoContext"
 // Importando JSON de produtos
 import storeGames from "../data/products.json"
 // Imports do Bootstrap
 import { Button, Stack } from 'react-bootstrap';
 import { formataVM } from "../utils/formataVM";
-
-type JogoNoCarrinhoProps = {
-    id: number;
-    quantidade: number;
-}
-
 
 export function JogoNoCarrinho({ id, quantidade }: JogoNoCarrinhoProps) {
     const { removeGamesQuantity } = useCarrinho();
