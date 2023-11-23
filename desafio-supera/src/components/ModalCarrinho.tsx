@@ -1,13 +1,8 @@
-// Importando os types necessários
 import { ModalCarrinhoProps } from "../types/types";
-
 import { Offcanvas, Stack } from 'react-bootstrap';
-// Importando contexto do carrinho de compras
 import { useCarrinho } from "../context/carrinhoContext"
-// Importando componente de jogo no carrinho
 import { JogoNoCarrinho } from "./JogoNoCarrinho"
 import { formataVM } from '../utils/formataVM';
-// Importando JSON de produtos
 import storeGames from "../data/products.json"
 
 
@@ -26,19 +21,15 @@ export function ModalCarrinho( { modalCarrinhoAberto }: ModalCarrinhoProps ) {
                 <Offcanvas.Title>Carrinho de compras</Offcanvas.Title>
             </Offcanvas.Header>
 
-            <Offcanvas.Body>
-                <Stack gap={3}>
-                    {/* Mapeando os jogos do carrinho e passando as props para o componente */}
+            <Offcanvas.Body style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+                <Stack gap={3} style={{ flex: 1 }}>
                     {carrinhoJogos.map((jogo) => (
-                        <JogoNoCarrinho key={jogo.id} {...jogo}/>
+                    <JogoNoCarrinho key={jogo.id} {...jogo} />
                     ))}
-                    {/* Validando se o carrinho está vazio */}
-                    <div className="text-center">
+                    <div className="text-center mt-auto" style={{ width: "100%" }}>
                         {carrinhoJogos.length === 0 ? (
                             <p className="text-muted">Seu carrinho está vazio</p>
                         ) : (
-
-                            // Se não estiver vazio, mostra o total e o botão de finalizar compra (que não faz nada)
                             <div>
                                 <div className="text-center">
                                     Total:{" "}
@@ -50,8 +41,7 @@ export function ModalCarrinho( { modalCarrinhoAberto }: ModalCarrinhoProps ) {
                                     )}
                                 </div>
                                 
-                                {/* Botão enfeite */}
-                                <button className="btn btn-primary mt-3" disabled>Finalizar compra</button>
+                                <button className="btn btn-primary mt-3">Finalizar compra</button>
                             </div>
                         )}
                     </div>

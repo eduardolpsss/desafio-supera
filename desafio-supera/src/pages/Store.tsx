@@ -1,8 +1,5 @@
-// Importando JSON de produtos
 import storeGames from "../data/products.json"
-// Imports do Bootstrap
-import { Row, Col, Card } from "react-bootstrap"
-// Import components
+import { Row, Col } from "react-bootstrap"
 import { StoreGame } from "../components/StoreGame"
 
 export function Store() {
